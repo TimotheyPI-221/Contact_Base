@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.css">
+  <script defer src="./main.js"></script>
+  <title>Contacts</title>
+</head>
+<body>
+  <div class="background">
+  <header class="header">
+    <div class="container header-container">
+    <div class="header-logo">skb.</div>
+    <input class="filter-input" placeholder="Введите запрос">
+    <div class="filter-arr"></div>
+  </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <div class="modal-overlay hidden"></div>
+      <form class="modal-window modal-change hidden">
+        <h2 class="modal-title">Изменить данные</h2>
+        <span class="modal-span"></span>
+        <button type="button" id="close-change" class="close"></button>
+        <div class="modal-group">
+          <input type="text" class="modal-input" id="surname">
+          <label class="modal-label">Фамилия*</label>
+        </div>       
+        <div class="modal-group">
+          <input type="text" class="modal-input" id="name">
+          <label class="modal-label">Имя*</label>
+        </div>
+        <div class="modal-group">
+          <input type="text" class="modal-input" id="lastname">
+          <label class="modal-label">Отчество*</label>
+        </div>
+        <div class="modal-contact-div" id="change-contact-div">
+          <button type="button" class="modal-add-contact-button" id="change-add-contact">Добавить контакт</button>
+        </div>
+        <button type="button" class="modal-save-button" id="change-save">Сохранить</button>
+        <button type="button" id="button-id" class="modal-cancel-delete-button">Удалить клиента</button>
+      </form>
+      <form class="modal-window modal-add hidden form">
+        <h2 class="modal-title add">Новый клиент</h2>
+        <span class="modal-span"></span>
+        <button type="button" id="close-add" class="close"></button>
+        <div class="modal-group">
+          <input type="text" class="modal-input" id="surname-add">
+          <label class="modal-label">Фамилия*</label>
+        </div>       
+        <div class="modal-group">
+          <input type="text" class="modal-input" id="name-add">
+          <label class="modal-label">Имя*</label>
+        </div>
+        <div class="modal-group">
+          <input type="text" class="modal-input" id="lastname-add">
+          <label class="modal-label">Отчество*</label>
+        </div>
+        <div class="modal-contact-div" id="add-contact-div">
+          <button type="button" class="modal-add-contact-button" id="add-add-contact">Добавить контакт</button>
+        </div>
+        <button type="button" class="modal-save-button" id="add-save">Сохранить</button>
+        <button class="modal-cancel-button">отмена</button>
+      </form>
+      <form class="modal-window modal-delete hidden">
+        <h2 class="modal-title margin-delete-modal">Удалить клиента</h2>
+        <button type="button" id="close-delete" class="close"></button>
+        <p class="modal-text">Вы действительно хотите удалить <br> данного клиента?</p>
+        <button class="modal-delete-button" id="delete-delete">Удалить</button>
+        <button class="modal-delete-cancel-button">отмена</button>
+      </form>
+      <h1 class="title">Клиенты</h1>
+      <div class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="id"><button data-property="id" class="table-button button-id arrow-id">ID</button></th>
+            <th>
+              <div class="button-FIO-div">
+               <button data-property="surname" class="table-button button-FIO arrow-FIO">Фамилия Имя Отчество</button>
+               <span class="button-FIO-span">A-Я</span>
+             </div>
+            </th>
+            <th><button data-property="createdAt" class="table-button button-create-time arrow-create-time">Дата и время <br> создания</button></th>
+            <th><button data-property="updatedAt" class="table-button button-change-time arrow-change-time">Последние<br> изменения</button></th>
+            <th class="table-title title-text">Контакты</th>
+            <th class="table-title title-text">Действия</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+            <div class="load">
+            </div>
+          <tr class="load-row">
+            <td
+            class="load-table"></td>
+            <td
+            class="load-table"></td>
+            <td
+            class="load-table"></td>
+            <td
+            class="load-table"></td>
+            <td
+            class="load-table"></td>
+            <td
+            class="load-table"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+    <button class="addButton flex">Добавить клиента</button>
+  </div>
+  </footer>
+</div>
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+</body>
+</html>
